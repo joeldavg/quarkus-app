@@ -6,16 +6,14 @@ import io.smallrye.mutiny.Uni;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 
-import java.util.List;
-
 @ApplicationScoped
-public class ListUserService {
+public class CreateUserService {
 
     @Inject
     private UserGateway userGateway;
 
-    public Uni<List<User>> listUsers() {
-        return this.userGateway.listUsers();
+    public Uni<User> createUser(User user) {
+        return this.userGateway.createUser(user);
     }
 
 }
